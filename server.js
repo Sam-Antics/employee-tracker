@@ -1,5 +1,6 @@
-// importing Express.js
+// importing Express.js and mysql2
 const express = require('express');
+const mysql = require('mysql2');
 
 // PORT designation and app expression
 const PORT = process.env.PORT || 3001;
@@ -9,10 +10,35 @@ const app = express();
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-app.get('/', (req, res) => {
-  res.json({
-    message: 'Yo, bitch'
-  });
+// Connect to the database
+const db = mysql.createConnection(
+  {
+    host: 'localhost',
+    user: 'root',
+    password: 'SQLp4s$w0r6',
+    database: "employee_tracker"
+  },
+  console.log('Connected to the Employee Tracker database.')
+);
+
+// GET a single department from the table
+db.query(`SELECT * FROM department WHERE id = 1`, (err, row) => {
+  if (err) {
+    console.log(err);
+  }
+  console.log(row);
+});
+
+// CREATE a department
+const sql = `INSERT INTO department (id, name)
+  VALUES (?,?)`;
+const params = [8, 'Engineering'];
+
+db.query(sql, params, (err, result) => {
+  if (err) {
+    console.log(err);
+  }
+  console.log(result);
 });
 
 // Default response for any other request (Not Found)
