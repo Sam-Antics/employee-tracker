@@ -54,4 +54,4 @@ THEN I am prompted to select an employee to update and their new role and this i
 - [LinkedIn](https://www.linkedin.com/in/seguerra/)
 
 ## Contributions
-
+*Thank you for your intrest in this project. I am not accepting contributions at this time.*
