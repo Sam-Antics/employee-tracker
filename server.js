@@ -1,6 +1,7 @@
 // importing Express.js and mysql2
 const express = require('express');
 const mysql = require('mysql2');
+const cTable = require('console.table');
 
 // PORT designation and app expression
 const PORT = process.env.PORT || 3001;
