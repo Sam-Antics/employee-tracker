@@ -26,20 +26,19 @@ db.query(`SELECT * FROM department WHERE id = 1`, (err, row) => {
   if (err) {
     console.log(err);
   }
-  console.log(row);
 });
 
-// // CREATE a department
-// const sql = `INSERT INTO department (id, name)
-//   VALUES (?,?)`;
-// const params = [8, 'Engineering'];
+// CREATE a department
+const sql = `INSERT INTO department (id, name)
+  VALUES (?,?)`;
+const params = [7, 'IT'];
 
-// db.query(sql, params, (err, result) => {
-//   if (err) {
-//     console.log(err);
-//   }
-//   console.log(result);
-// });
+db.query(sql, params, (err, result) => {
+  if (err) {
+    console.log(err);
+  }
+  console.log(result);
+});
 
 // Default response for any other request (Not Found)
 app.use((req, res) => {
