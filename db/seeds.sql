@@ -5,5 +5,4 @@ VALUES
   ("Sales"),
   ("Customer Service"),
   ("Installation"),
-  ("Service"),
-  ("IT");
+  ("Service");
