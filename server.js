@@ -36,7 +36,7 @@ app.use(express.json());
 //   res.status(404).end();
 // });
 
-// starts Express.js server
+// starts Express.js server and connects to database
 db.connect(err => {
   if (err) throw err;
   console.log('Connected to the Employee Tracker database.');
